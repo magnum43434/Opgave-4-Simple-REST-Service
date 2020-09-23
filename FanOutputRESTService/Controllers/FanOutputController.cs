@@ -40,6 +40,7 @@ namespace FanOutputRESTService.Controllers
         [HttpPost]
         public void Post([FromBody] FanOutputModel value)
         {
+            value.Id = fanOutputReadings.Count + 1;
             fanOutputReadings.Add(value);
         }
 
@@ -50,7 +51,6 @@ namespace FanOutputRESTService.Controllers
             FanOutputModel fanOutput = Get(id);
             if(fanOutput != null)
             {
-                fanOutput.Id = value.Id;
                 fanOutput.Name = value.Name;
                 fanOutput.Temp = value.Temp;
                 fanOutput.Humidity = value.Humidity;

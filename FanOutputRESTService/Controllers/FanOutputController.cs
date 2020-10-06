@@ -40,7 +40,7 @@ namespace FanOutputRESTService.Controllers
         [HttpPost]
         public void Post([FromBody] FanOutputModel value)
         {
-            value.Id = fanOutputReadings.Count + 1;
+            value.Id = fanOutputReadings.Last().Id + 1;
             fanOutputReadings.Add(value);
         }
 

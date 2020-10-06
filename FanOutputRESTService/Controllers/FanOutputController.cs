@@ -13,35 +13,35 @@ namespace FanOutputRESTService.Controllers
     [ApiController]
     public class FanOutputController : ControllerBase
     {
-        public static List<FanOutputModel> fanOutputReadings = new List<FanOutputModel>()
+        public static List<FanOutputModel> FanOutputReadings = new List<FanOutputModel>()
         {
-            new FanOutputModel("First Output", 15, 30),
-            new FanOutputModel("Second Output", 18, 41),
-            new FanOutputModel("Thrid Output", 24, 69),
-            new FanOutputModel("Fourth Output", 22, 49),
-            new FanOutputModel("Sixth Output", 20, 75),
+            new FanOutputModel("First Output", 15, 30){ Id = 1},
+            new FanOutputModel("Second Output", 18, 41){ Id = 2},
+            new FanOutputModel("Thrid Output", 24, 69){ Id = 3},
+            new FanOutputModel("Fourth Output", 22, 49){ Id = 4},
+            new FanOutputModel("Sixth Output", 20, 75){ Id = 5},
         };
 
         // GET: api/<FanOutputController>
         [HttpGet]
         public IEnumerable<FanOutputModel> Get()
         {
-            return fanOutputReadings;
+            return FanOutputReadings;
         }
 
         // GET api/<FanOutputController>/5
         [HttpGet("{id}")]
         public FanOutputModel Get(int id)
         {
-            return fanOutputReadings.Find(i => i.Id == id);
+            return FanOutputReadings.Find(i => i.Id == id);
         }
 
         // POST api/<FanOutputController>
         [HttpPost]
         public void Post([FromBody] FanOutputModel value)
         {
-            value.Id = fanOutputReadings.Last().Id + 1;
-            fanOutputReadings.Add(value);
+            value.Id = FanOutputReadings.Last().Id + 1;
+            FanOutputReadings.Add(value);
         }
 
         // PUT api/<FanOutputController>/5
@@ -62,7 +62,7 @@ namespace FanOutputRESTService.Controllers
         public void Delete(int id)
         {
             FanOutputModel fanOutput = Get(id);
-            fanOutputReadings.Remove(fanOutput);
+            FanOutputReadings.Remove(fanOutput);
         }
     }
 }

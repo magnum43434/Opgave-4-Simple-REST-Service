@@ -8,12 +8,11 @@ namespace FanPutputModelLib
     {
         public FanOutputModel()
         {
-            
+
         }
 
-        public FanOutputModel(int id, string name, int temp, int humidity)
+        public FanOutputModel( string name, int temp, int humidity)
         {
-            Id = id;
             Name = name;
             Temp = temp;
             Humidity = humidity;

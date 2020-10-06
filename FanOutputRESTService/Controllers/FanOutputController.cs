@@ -15,11 +15,11 @@ namespace FanOutputRESTService.Controllers
     {
         public static List<FanOutputModel> fanOutputReadings = new List<FanOutputModel>()
         {
-            new FanOutputModel(1, "First Output", 15, 30),
-            new FanOutputModel(2, "Second Output", 18, 41),
-            new FanOutputModel(3, "Thrid Output", 24, 69),
-            new FanOutputModel(4, "Fourth Output", 22, 49),
-            new FanOutputModel(5, "Sixth Output", 20, 75),
+            new FanOutputModel("First Output", 15, 30),
+            new FanOutputModel("Second Output", 18, 41),
+            new FanOutputModel("Thrid Output", 24, 69),
+            new FanOutputModel("Fourth Output", 22, 49),
+            new FanOutputModel("Sixth Output", 20, 75),
         };
 
         // GET: api/<FanOutputController>
